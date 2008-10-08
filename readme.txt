@@ -41,3 +41,4 @@ Probably! E-mail me: webmaster[at]clifgriffin.com
 == Screenshots ==
 
 1. A sample from my site.
+2. The settings page.
