@@ -11,6 +11,15 @@ Displays recent posts from a specified category in a customizable box on the hom
 == Description ==
 Featured Category allows you to display recent posts from the category of your choosing. You are able to customize the number of posts, the style they are displayed in, and the heading used to describe. It is perfect for display recent news, projects, and other things you may wish to stand out in your blog.
 
+Updates 10.9.2008:
+
+Thanks to user feedback I fixed/modified the following things in version 1.0.1:
+
+    * Settings page now sets the category drop down box selection when you return to the page.
+    * It shouldn't run in sidebar widgets anymore.*
+
+*Assuming the sidebar loads after the post...if this isn't the case on some themes, I'll have to do more thinking.
+
 History:
 
 About a month ago I began searching for a plugin I just knew existed.  I needed a plugin that would allow me to select a category, a number of posts, and display a neatly formatted list of the applicable posts from that category.
