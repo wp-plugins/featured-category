@@ -4,7 +4,7 @@ Donate link: http://clifgriffin.com/index.php/2008/10/05/featured-category/
 Tags: recent, categories, featured, display posts from category
 Requires at least: 2.3.0
 Tested up to: 2.6.2
-Stable tag: trunk
+Stable tag: 1.0.1
 
 Displays recent posts from a specified category in a customizable box on the home page of the blog.
 

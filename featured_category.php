@@ -3,7 +3,7 @@
 Plugin Name: Featured Category
 Plugin URI: http://clifgriffin.com/index.php/2008/10/05/featured-category/
 Description: Displays a configurable list of the recent posts from a category of your choosing. This will help you highlight things such as site news, or something specific to the content you produce.
-Version: 1.0
+Version: 1.0.1
 Author: Clifton H. Griffin II
 Author URI: http://clifgriffin.com
 */
@@ -46,45 +46,58 @@ function featcat_admin_actions()
 }
 add_action('admin_menu', 'featcat_admin_actions');
 
+//Set a global variable. We want to run it only once per page. 
+function featcat_setglobal()
+{
+	global $featcat_is_first_run;
+	$featcat_is_first_run = true;
+}
+add_action('init', 'featcat_setglobal');
 //Where it all happens
 function featcat_main()
 {
-	global $post;
-	$temp_post = $post;
+	global $featcat_is_first_run;
 	//Don't waste resources if we're not on the home page.	
-	if ( is_home() ) 
-	{	
-		//Load options	
-		$category = get_option("featcat_category_id");
-		$num_posts = get_option("featcat_num_posts");
-		$title = get_option("featcat_title");
-		
-		//Make a new query object so as not to upset the loop.
-		$my_query = new WP_Query("cat=".$category."&showposts=".$num_posts);
-		
-		//Let's do it		
-		echo "<div class=\"featcat\">";
-		echo  "<h3 class=\"featcat\">".$title."</h3>";
-		echo "<ul class=\"featcat\" >";
-		
-		//We do not use The Loop (TM) because doing so creates an infinite loop as we are already in a loop.
- 		foreach ($my_query->posts as $cpost)
-		{
-			setup_postdata($cpost);
-			echo "<li class=\"featcat\" >";
-			echo "<a class=\"featcat\" href=\"";
-			echo get_permalink($cpost->ID);
-			echo "\">";
-			echo $cpost->post_title;
-			echo "</a>";
-			echo "</li>";
+	if($featcat_is_first_run == true)
+	{		
+		if ( is_home() ) 
+		{	
+			global $post;
+			$temp_post = $post;
+			//Load options	
+			$category = get_option("featcat_category_id");
+			$num_posts = get_option("featcat_num_posts");
+			$title = get_option("featcat_title");
+			
+			//Make a new query object so as not to upset the loop.
+			$my_query = new WP_Query("cat=".$category."&showposts=".$num_posts);
+			
+			//Let's do it		
+			echo "<div class=\"featcat\">";
+			echo  "<h3 class=\"featcat\">".$title."</h3>";
+			echo "<ul class=\"featcat\" >";
+			
+			//We do not use The Loop (TM) because doing so creates an infinite loop as we are already in a loop.
+			foreach ($my_query->posts as $cpost)
+			{
+				setup_postdata($cpost);
+				echo "<li class=\"featcat\" >";
+				echo "<a class=\"featcat\" href=\"";
+				echo get_permalink($cpost->ID);
+				echo "\">";
+				echo $cpost->post_title;
+				echo "</a>";
+				echo "</li>";
+			}
+			echo "</ul>";
+			echo  "</div>";
+			
+			$post = $temp_post;
+			//Keep The_Loop from breaking
+			setup_postdata($post);
+			$featcat_is_first_run = false;
 		}
-		echo "</ul>";
-		echo  "</div>";
 	}
-	$post = $temp_post;
-	//Keep The_Loop from breaking
-	setup_postdata($post);
 }
 //Add function
 add_action('loop_start', 'featcat_main');

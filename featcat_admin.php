@@ -39,7 +39,12 @@ if ('process' == $_POST['stage']) {
       <?php
 		$categories=  get_categories(); 
 	  	foreach ($categories as $cat) {
-		$option = '<option value="'.$cat->cat_ID.'">';
+			if($selected_cat == $cat->cat_ID) {
+				$option = '<option selected="selected" value="'.$cat->cat_ID.'">';
+			}
+			else {
+				$option = '<option value="'.$cat->cat_ID.'">';
+			}
 		$option .= $cat->cat_name;
 		$option .= ' ('.$cat->cat_ID.')';
 		$option .= '</option>';
