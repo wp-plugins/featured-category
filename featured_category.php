@@ -107,7 +107,7 @@ function featcat_css() {
 	//For simplicity, place CSS in external file.
 	if( is_home() )
 	{
-		echo file_get_contents(WP_PLUGIN_DIR."/featuredcategory/featcat_style.css");
+		echo file_get_contents(WP_PLUGIN_DIR."/featured-category/featcat_style.css");
 	}
 }
 

@@ -4,23 +4,24 @@ Donate link: http://clifgriffin.com/index.php/2008/10/05/featured-category/
 Tags: recent, categories, featured, display posts from category
 Requires at least: 2.3.0
 Tested up to: 2.6.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Displays recent posts from a specified category in a customizable box on the home page of the blog.
 
 == Description ==
 Featured Category allows you to display recent posts from the category of your choosing. You are able to customize the number of posts, the style they are displayed in, and the heading used to describe. It is perfect for display recent news, projects, and other things you may wish to stand out in your blog.
 
+Version History:
+1.0.2:
+- Fixed path name. (Wordpress renamed the installation folder.)
+1.0.1
 Updates 10.9.2008:
+- Settings page now sets the category drop down box selection when you return to the page.
+- It shouldn't run in sidebar widgets anymore. (Assuming the content portion loads before sidebar...I may need to tweak this in the future.)
+1.0
+- Original release.
 
-Thanks to user feedback I fixed/modified the following things in version 1.0.1:
-
-    * Settings page now sets the category drop down box selection when you return to the page.
-    * It shouldn't run in sidebar widgets anymore.*
-
-*Assuming the sidebar loads after the post...if this isn't the case on some themes, I'll have to do more thinking.
-
-History:
+Background:
 
 About a month ago I began searching for a plugin I just knew existed.  I needed a plugin that would allow me to select a category, a number of posts, and display a neatly formatted list of the applicable posts from that category.
 
