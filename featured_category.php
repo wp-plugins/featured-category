@@ -23,7 +23,7 @@ Author URI: http://clifgriffin.com
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-//What do we do when the plugin is activated?
+//What do we do when the plugin is activated??
 
 //Activation hook function
 function featcat_activation_hook()
