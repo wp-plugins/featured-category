@@ -37,7 +37,7 @@ If the style is not to your liking, simply modify featcat_style.css in the plugi
 
 == Installation ==
 
-1. Upload the directory "featuredcategory" to the `/wp-content/plugins/` directory
+1. Upload the directory "featured-category" to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Customize settings via settings control panel in wordpress administration pages.
 
