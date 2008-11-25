@@ -3,7 +3,7 @@
 Plugin Name: Featured Category
 Plugin URI: http://clifgriffin.com/index.php/2008/10/05/featured-category/
 Description: Displays a configurable list of the recent posts from a category of your choosing. This will help you highlight things such as site news, or something specific to the content you produce.
-Version: 1.0.1
+Version: 1.0.2
 Author: Clifton H. Griffin II
 Author URI: http://clifgriffin.com
 */
@@ -23,7 +23,7 @@ Author URI: http://clifgriffin.com
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-//What do we do when the plugin is activated?
+//What do we do when the plugin is activated??
 
 //Activation hook function
 function featcat_activation_hook()
