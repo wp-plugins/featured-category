@@ -25,7 +25,7 @@ Featured Category allows you to display recent posts from the category of your c
 
 * Original release.
 
-Background:
+= Background = 
 
 About a month ago I began searching for a plugin I just knew existed.  I needed a plugin that would allow me to select a category, a number of posts, and display a neatly formatted list of the applicable posts from that category.
 
