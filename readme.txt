@@ -3,7 +3,7 @@ Contributors: clifgriffin
 Donate link: http://clifgriffin.com/index.php/2008/10/05/featured-category/
 Tags: recent, categories, featured, display posts from category
 Requires at least: 2.3.0
-Tested up to: 2.7-beta3
+Tested up to: 2.7-rc1
 Stable tag: 1.0.2
 
 Displays recent posts from a specified category in a customizable box on the home page of the blog.
@@ -11,15 +11,19 @@ Displays recent posts from a specified category in a customizable box on the hom
 == Description ==
 Featured Category allows you to display recent posts from the category of your choosing. You are able to customize the number of posts, the style they are displayed in, and the heading used to describe. It is perfect for display recent news, projects, and other things you may wish to stand out in your blog.
 
-Version History:
-1.0.2:
-- Fixed path name. (Wordpress renamed the installation folder.)
-1.0.1
-Updates 10.9.2008:
-- Settings page now sets the category drop down box selection when you return to the page.
-- It shouldn't run in sidebar widgets anymore. (Assuming the content portion loads before sidebar...I may need to tweak this in the future.)
-1.0
-- Original release.
+= Version History =
+**1.0.2**
+
+* Fixed path name. (Wordpress renamed the installation folder.)
+
+**1.0.1**
+
+* Settings page now sets the category drop down box selection when you return to the page.
+* It shouldn't run in sidebar widgets anymore. (Assuming the content portion loads before sidebar...I may need to tweak this in the future.)
+
+**1.0**
+
+* Original release.
 
 Background:
 
@@ -31,9 +35,9 @@ Which brings us to Featured Category, my first Wordpress Plugin. (Be gentle!)
 
 I tried to follow the Wordpress API as closely as possible. 
 
-Once you activate the plugin, , simply load it's settings page and choose the category, the title or "heading" and the number of posts you wish to display. 
+Once you activate the plugin, simply load its settings page and choose the category, the title or "heading" and the number of posts you wish to display. 
 
-If the style is not to your liking, simply modify featcat_style.css in the plugin directory. I have included entries for implemented and unimplemented portions to speed things up.
+If the style is not to your liking, modify featcat_style.css in the plugin directory. I have included entries for implemented and unimplemented portions to speed things up.
 
 == Installation ==
 
