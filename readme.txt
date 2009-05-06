@@ -3,13 +3,21 @@ Contributors: clifgriffin
 Donate link: http://clifgriffin.com/index.php/2008/10/05/featured-category/
 Tags: recent, categories, featured, display posts from category
 Requires at least: 2.3.0
-Tested up to: 2.7-rc1
-Stable tag: 1.0.2
+Tested up to: 2.7.1
+Stable tag: 1.0.2.1
 
 Displays recent posts from a specified category in a customizable box on the home page of the blog.
 
 == Description ==
-Featured Category allows you to display recent posts from the category of your choosing. You are able to customize the number of posts, the style they are displayed in, and the heading used to describe. It is perfect for display recent news, projects, and other things you may wish to stand out in your blog.
+Featured Category allows you to display recent posts from the category of your choosing at the top of your home page before "The Loop". You are able to customize the number of posts, the style they are displayed in, and the heading used to describe. It is perfect for displaying recent news, projects, and other things you may wish to stand out in your blog.
+
+This is not a sidebar widget. It is a home page addition. See the provided screenshots to understand how it might look on your site.
+
+= Version History =
+**1.0.2.1**
+
+* Fixed security issue. Now only administrators can modify admin settings.
+* Deleted trailing spaces at the end of the main plugin file. This was somehow causing conflicts with WP Super Cache plugin. Bizzarre, I know.
 
 = Version History =
 **1.0.2**
