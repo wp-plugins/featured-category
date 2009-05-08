@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: clifgriffin
-Donate link: http://clifgriffin.com/index.php/2008/10/05/featured-category/
+Donate link: http://clifgriffin.com/code/donate/
 Tags: recent, categories, featured, display posts from category
 Requires at least: 2.3.0
 Tested up to: 2.7.1
