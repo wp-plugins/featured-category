@@ -3,7 +3,7 @@
 Plugin Name: Featured Category
 Plugin URI: http://clifgriffin.com/index.php/2008/10/05/featured-category/
 Description: Displays a configurable list of the recent posts from a category of your choosing. This will help you highlight things such as site news, or something specific to the content you produce.
-Version: 1.0.2.1
+Version: 1.1
 Author: Clifton H. Griffin II
 Author URI: http://clifgriffin.com
 */
@@ -23,27 +23,52 @@ Author URI: http://clifgriffin.com
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-//What do we do when the plugin is activated??
 
 //Activation hook function
+
 function featcat_activation_hook()
 {
 	//Store settings
 	add_option("featcat_title", "Recent News");
 	add_option("featcat_num_posts", 5);
 	add_option("featcat_category_id", 5);
-
+	add_option("featcat_style", "<style type='text/css'>
+div.featcat  {
+width:inherit; 
+background-color:#FFFFD9; 
+border:dotted; 
+border-color:#666; 
+border-width:thin;
+margin-bottom: 20px;
 }
+h3.featcat  {
+margin-left:5px;
+}
+ul.featcat  {
+}
+li.featcat  {
+}
+A:link.featcat {
+}
+A:visited.featcat {
+}
+A:active.featcat {
+}
+A:hover.featcat {
+}
+</style>");
+}
+
 //Admin
 function featcat_menu()
 {
 	include 'featcat_admin.php';
 }
-
 function featcat_admin_actions()
 {
     add_options_page("Featured Category", "Featured Category", 10, "Featured-Category", "featcat_menu");
 }
+
 add_action('admin_menu', 'featcat_admin_actions');
 
 //Set a global variable. We want to run it only once per page. 
@@ -52,11 +77,14 @@ function featcat_setglobal()
 	global $featcat_is_first_run;
 	$featcat_is_first_run = true;
 }
+
 add_action('init', 'featcat_setglobal');
+
 //Where it all happens
 function featcat_main()
 {
 	global $featcat_is_first_run;
+	
 	//Don't waste resources if we're not on the home page.	
 	if($featcat_is_first_run == true)
 	{		
@@ -64,6 +92,7 @@ function featcat_main()
 		{	
 			global $post;
 			$temp_post = $post;
+			
 			//Load options	
 			$category = get_option("featcat_category_id");
 			$num_posts = get_option("featcat_num_posts");
@@ -71,10 +100,14 @@ function featcat_main()
 			
 			//Make a new query object so as not to upset the loop.
 			$my_query = new WP_Query("cat=".$category."&showposts=".$num_posts);
-			
+
 			//Let's do it		
 			echo "<div class=\"featcat\">";
-			echo  "<h3 class=\"featcat\">".$title."</h3>";
+			if($title != "")
+			{
+				echo  "<h3 class=\"featcat\">".$title."</h3>";
+			}
+
 			echo "<ul class=\"featcat\" >";
 			
 			//We do not use The Loop (TM) because doing so creates an infinite loop as we are already in a loop.
@@ -89,10 +122,12 @@ function featcat_main()
 				echo "</a>";
 				echo "</li>";
 			}
+
 			echo "</ul>";
 			echo  "</div>";
-			
+
 			$post = $temp_post;
+
 			//Keep The_Loop from breaking
 			setup_postdata($post);
 			$featcat_is_first_run = false;
@@ -103,11 +138,11 @@ function featcat_main()
 add_action('loop_start', 'featcat_main');
 
 //Make it pretty
-function featcat_css() {
-	//For simplicity, place CSS in external file.
+function featcat_css() 
+{
 	if( is_home() )
 	{
-		echo file_get_contents(WP_PLUGIN_DIR."/featured-category/featcat_style.css");
+		echo stripslashes(get_option("featcat_style"));
 	}
 }
 
