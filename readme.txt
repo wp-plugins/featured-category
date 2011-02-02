@@ -3,17 +3,21 @@ Contributors: clifgriffin
 Donate link: http://clifgriffin.com/code/donate/
 Tags: recent, categories, featured, display posts from category
 Requires at least: 2.3.0
-Tested up to: 2.9.2
+Tested up to: 3.0.4
 Stable tag: 1.1
 
 Displays recent posts from a specified category in a customizable box on the home page of the blog.
 
 == Description ==
-UPGRADERS NOTE: Please copy your style sheet before upgrading. When upgrade is finished, go to the Admin page and copy your style sheet over the default one and click Update Options.
-
 Featured Category allows you to display recent posts from the category of your choosing at the top of your home page before "The Loop". You are able to customize the number of posts, the style they are displayed in, and the heading used to describe. It is perfect for displaying recent news, projects, and other things you may wish to stand out in your blog.
 
 This is not a sidebar widget. It is a home page addition. See the provided screenshots to understand how it might look on your site.
+
+**Donate?**
+If you use this plugin and find that it serves your needs well, please consider a donation. :)
+
+**Special Requests**
+If you need a customization or change specific to your install, I am available for hire. Shoot me an e-mail: clifgriffin[at]gmail.com
 
 = Version History =
 **1.1**
