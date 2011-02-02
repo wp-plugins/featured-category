@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: clifgriffin
-Donate link: http://clifgriffin.com/code/donate/
+Donate link: http://clifgriffin.com/donate/
 Tags: recent, categories, featured, display posts from category
 Requires at least: 2.3.0
 Tested up to: 3.0.4
@@ -14,9 +14,16 @@ Featured Category allows you to display recent posts from the category of your c
 This is not a sidebar widget. It is a home page addition. See the provided screenshots to understand how it might look on your site.
 
 **Donate?**
+
 If you use this plugin and find that it serves your needs well, please consider a donation. :)
 
+**Support**
+
+If you need support, I recommend you leave a comment on the appropriate post on my blog:
+http://clifgriffin.com/2008/10/05/featured-category/
+
 **Special Requests**
+
 If you need a customization or change specific to your install, I am available for hire. Shoot me an e-mail: clifgriffin[at]gmail.com
 
 = Version History =
